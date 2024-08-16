@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Doリストアプリ</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/description.css"> <!-- 新しいCSSファイル -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+    <!-- ヘッダーの追加 -->
+    <header class="site-header">
+        <img src="png/2024-08-08 194502.png" alt="Site Logo" class="site-logo">
+        <h1>To-Doリストアプリ</h1>
+    </header>
+
+    <!-- 説明セクション -->
+    <div class="description-container" id="descriptionContainer">
+        <button class="close-button" id="closeDescription">×</button> <!-- 閉じるボタン -->
+        <h2>アプリの使い方</h2>
+        <p>このTo-Doリストアプリは、シフト管理や固定タスクの管理が可能な便利なツールです。タスクを追加、編集、削除し、完了したタスクを確認することができます。また、シフトの追加も簡単に行え、ICSファイルとしてエクスポートすることも可能です。</p>
+        <h3>主な機能</h3>
+        <ul>
+            <li>タスクの追加・編集・削除</li>
+            <li>固定タスクの管理</li>
+            <li>シフトの追加・編集・削除</li>
+            <li>完了したタスクの確認と削除</li>
+            <li>ICSファイルのエクスポート</li>
+        </ul>
+    </div>
+
+    <!-- 説明文を再度表示するボタン -->
+    <button class="show-description-button" id="showDescription" style="display: none;">説明文を表示</button>
+
+    <div class="app-container">
+        <nav class="taskbar">
+            <button id="viewCalendar">カレンダー</button>
+            <button id="viewFixedTasks">固定タスク</button>
+            <button id="viewCompletedTasks">完了したタスク</button>
+            <button id="exportIcsButton">ICSファイルをエクスポート</button>
+        </nav>
+        <div id="calendarView" class="view active">
+            <div class="calendar-container">
+                <div id="calendar"></div>
+                <div class="todo-container">
+                    <h2 id="selectedDateDisplay">選択された日付: まだ選択されていません</h2>
+                    <ul id="todoList"></ul>
+                </div>
+            </div>
+            <div class="todo-form">
+                <h2>タスクを追加</h2>
+                <input type="text" id="todoInput" placeholder="タスクの内容を入力">
+                <button id="addTodoButton">追加</button>
+            </div>
+            <div class="shift-form">
+                <h2>シフトを追加</h2>
+                <select id="shiftInput">
+                    <option value="X">X : 09:00~</option>
+                    <option value="Y">Y : 10:35~</option>
+                    <option value="A">A : 14:55~</option>
+                    <option value="B">B : 16:30~</option>
+                    <option value="C">C : 18:05~</option>
+                    <option value="D">D : 19:40~</option>
+                </select>
+                <button id="addShiftButton">追加</button>
+            </div>
+            <div id="shiftDisplay" class="shift-display">
+                シフト情報: まだ追加されていません
+            </div>
+        </div>
+        <div id="fixedTasksView" class="view">
+            <h2>固定タスクを入力</h2>
+            <div class="fixed-task-form">
+                <label for="fixedTaskPeriod">期間を入力:</label>
+                <input type="text" id="fixedTaskStartDate" placeholder="開始日" class="flatpickr">
+                <input type="text" id="fixedTaskEndDate" placeholder="終了日" class="flatpickr">
+                <input type="text" id="fixedTaskInput" placeholder="タスク内容を入力">
+                <button id="addFixedTaskButton">追加</button>
+            </div>
+            <div id="fixedTasksList" class="fixed-tasks-list">
+                固定タスク情報: まだ追加されていません
+            </div>
+        </div>
+        <div id="completedTasksView" class="view">
+            <h2>完了したタスク</h2>
+            <ul id="completedTasksList">
+                完了したタスク情報: まだ追加されていません
+            </ul>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="js/script.js"></script>
+    <script src="js/description.js"></script> <!-- 新しいJSファイル -->
+</body>
+</html>

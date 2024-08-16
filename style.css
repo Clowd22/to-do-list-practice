@@ -1,0 +1,281 @@
+/* 全体のスタイル設定 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ビューのスタイル */
+.view {
+    display: none;
+    flex: 1;
+    padding: 20px;
+}
+
+.view.active {
+    display: block;
+}
+
+
+/* ヘッダーのスタイル */
+.site-header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #6200ea;
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid #5e35b1;
+}
+
+.site-logo {
+    width: 75px; /* 必要に応じて調整 */
+    height: auto;
+    margin-right: 20px;
+}
+
+.site-header h1 {
+    margin: 0;
+    font-size: 18px;
+}
+
+/* コンテナのスタイル */
+.app-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* タスクバーのスタイル */
+.taskbar {
+    background-color: #6200ea;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.taskbar button {
+    background-color: #3700b3;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.taskbar button:hover {
+    background-color: #5e35b1;
+}
+
+.taskbar button:active {
+    background-color: #311b92;
+}
+
+/* カレンダー表示エリアのスタイル */
+#cViewalendar {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-container {
+    display: flex;
+    justify-content: space-between; /* カレンダーとTo-Doリストの間を広げる */
+    align-items: flex-start;
+    flex: 1;
+    padding-bottom: 20px;
+    gap: 40px; /* カレンダーとTo-Doリストの間隔を広げる */
+}
+
+/* カレンダーのスタイル */
+#calendar {
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: #fafafa;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* To-Doコンテナのスタイル */
+.todo-container {
+    background-color: #fafafa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    width: 45%;
+    box-sizing: border-box;
+}
+
+#todoList {
+    list-style-type: none;
+    padding: 0;
+    max-height: 300px; /* リストの高さを固定し、スクロール可能に */
+    overflow-y: auto;
+}
+
+#todoList li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#todoList li:last-child {
+    border-bottom: none;
+}
+
+/* ボタンのスタイル */
+.todo-button {
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 5px 10px;
+    margin-left: 5px;
+    border-radius: 4px;
+    font-size: 12px;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+}
+
+.todo-button:hover {
+    background-color: #0056b3;
+}
+
+.todo-button:active {
+    background-color: #004080;
+}
+
+.delete-button {
+    background-color: #dc3545;
+}
+
+.delete-button:hover {
+    background-color: #c82333;
+}
+
+.delete-button:active {
+    background-color: #bd2130;
+}
+
+/* タスク追加フォームのスタイル */
+.todo-form {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin-bottom: 20px;
+    box-sizing: border-box; /* ボックスサイズを含むパディングの計算 */
+}
+
+.todo-form input {
+    padding: 10px;
+    font-size: 14px;
+    margin-right: 10px;
+    width: calc(100% - 120px); /* ボタンの幅を考慮して調整 */
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.todo-form button {
+    padding: 10px;
+    font-size: 14px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 4px;
+    width: 100px; /* ボタンの幅を固定 */
+}
+
+.todo-form button:hover {
+    background-color: #555;
+}
+
+/* シフト情報表示エリアのスタイル */
+#shiftDisplay {
+    padding: 20px;
+    text-align: center;
+    background-color: #f0f0f0;
+    margin-top: 10px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* 選択された日付表示エリアのスタイル */
+#selectedDateDisplay {
+    padding: 20px;
+    text-align: center;
+    background-color: #eee;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+/* 固定タスクフォームのスタイル */
+.fixed-task-form {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    width: 95%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.fixed-task-form input,
+.fixed-task-form button {
+    padding: 10px;
+    font-size: 14px;
+    width: calc(100% - 20px);
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.fixed-task-form button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.fixed-task-form button:hover {
+    background-color: #555;
+}
+
+/* 固定タスクリストのスタイル */
+.fixed-tasks-list {
+    background-color: #fafafa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
