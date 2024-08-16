@@ -1,0 +1,73 @@
+/* description.css */
+
+/* 説明セクションの幅を制限 */
+.description-container {
+    width: 90%;
+    margin: 0 auto 20px auto;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    position: relative; /* 閉じるボタンの位置指定のために追加 */
+}
+
+.description-container h2 {
+    margin-top: 0;
+    font-size: 20px;
+    color: #333;
+}
+
+.description-container p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.description-container ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.description-container ul li {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+/* 閉じるボタンのスタイル */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 50%;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    background-color: #c0392b;
+}
+
+/* 説明文を表示ボタンのスタイル */
+.show-description-button {
+    display: block;
+    margin: 0 auto 20px auto;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.show-description-button:hover {
+    background-color: #2980b9;
+}
+
+/* アプリのコンテンツの幅を100%に設定 */
+.app-container {
+    width: 100%;
+}
